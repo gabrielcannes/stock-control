@@ -14,5 +14,19 @@ export class HomeComponent {
     password: ['', [Validators.minLength(4), Validators.required]],
   });
 
+  signUpForm = this.formBuilder.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.email, Validators.required]],
+    password: ['', [Validators.minLength(4), Validators.required]],
+  });
+
   constructor(private formBuilder: FormBuilder) {}
+
+  onSubmitLoginForm(): void {
+    console.log(this.loginForm.value);
+  }
+
+  onSignUpLoginForm(): void {
+    console.log(this.signUpForm.value);
+  }
 }
